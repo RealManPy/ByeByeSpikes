@@ -3,11 +3,14 @@ let drillPower = 1;
 let upgradeCost = 10;
 let upgradePsCost = 50;
 let robotsPerSecond = 0;
+let drillSound = new Audio("drillSound.mp3");
 
 document.getElementById('drill-button').addEventListener('click', function() {
     robotsCount += drillPower;
     document.getElementById('robots-count').textContent = robotsCount;
-
+	
+	drillSound.play();
+	
     // Animate the drill
     let drill = document.getElementById('drill');
     drill.style.top = '0'; // Move drill down
