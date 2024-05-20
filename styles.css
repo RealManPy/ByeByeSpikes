@@ -35,10 +35,7 @@ body {
 #logo {
     width: 120px;
     margin-bottom: 20px;
-
 }
-
-
 
 #robot-container {
     position: relative;
@@ -63,7 +60,7 @@ body {
     transition: top 0.1s ease-in-out;
 }
 
-#drill-button, #upgrade-button {
+#drill-button, #upgrade-button, #upgrade-perSec {
     padding: 15px 25px;
     font-size: 18px;
     border: none;
@@ -73,11 +70,14 @@ body {
     cursor: pointer;
     transition: background 0.3s, transform 0.1s;
     margin: 10px 0;
-    width: 80%;
+    width: 45%; /* Adjusted for inline display */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: inline-block; /* For inline display */
+    margin-left: 2.5%;
+    margin-right: 2.5%;
 }
 
-#drill-button:hover, #upgrade-button:hover {
+#drill-button:hover, #upgrade-button:hover, #upgrade-perSec:hover {
     background: linear-gradient(135deg, #ff4b2b, #ff416c);
     transform: scale(1.05);
 }
@@ -91,7 +91,8 @@ body {
     margin: 10px 0;
 }
 
-#stats button {
-    display: block;
-    margin: 10px auto;
+.upgrade-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
 }

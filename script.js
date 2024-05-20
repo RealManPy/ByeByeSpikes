@@ -1,6 +1,8 @@
 let robotsCount = 0;
 let drillPower = 1;
 let upgradeCost = 10;
+let upgradePsCost = 50;
+let robotsPerSecond = 0;
 
 document.getElementById('drill-button').addEventListener('click', function() {
     robotsCount += drillPower;
@@ -26,3 +28,22 @@ document.getElementById('upgrade-button').addEventListener('click', function() {
         alert('Not enough robots to upgrade!');
     }
 });
+
+document.getElementById('upgrade-perSec').addEventListener('click', function() {
+    if (robotsCount >= upgradePsCost) {
+        robotsCount -= upgradePsCost;
+        robotsPerSecond += 3; // Increment robots per second
+        upgradePsCost += 70; // Increase upgrade cost incrementally
+        document.getElementById('robots-count').textContent = robotsCount;
+        document.getElementById('PSupgrade-cost').textContent = upgradePsCost;
+    } else {
+        alert('Not enough robots to upgrade!');
+    }
+});
+
+function updateRobots() {
+    robotsCount += robotsPerSecond;
+    document.getElementById('robots-count').textContent = robotsCount;
+}
+
+setInterval(updateRobots, 1000); // Update robots count every second
