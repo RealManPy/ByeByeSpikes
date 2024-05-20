@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+
+#game-container {
+    text-align: center;
+    max-width: 400px;
+    padding: 20px;
+    border: 2px solid #555;
+    border-radius: 15px;
+    background: #3c3c3c;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(0, 0, 0, 1);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    }
+}
+
+#logo {
+    width: 120px;
+    margin-bottom: 20px;
+
+}
+
+
+
+#robot-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 20px auto;
+}
+
+#robot {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#drill {
+    position: absolute;
+    width: 70px;
+    top: -70px; /* Adjust this value based on your drill image */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: top 0.1s ease-in-out;
+}
+
+#drill-button, #upgrade-button {
+    padding: 15px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+    margin: 10px 0;
+    width: 80%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#drill-button:hover, #upgrade-button:hover {
+    background: linear-gradient(135deg, #ff4b2b, #ff416c);
+    transform: scale(1.05);
+}
+
+#stats {
+    margin-top: 20px;
+}
+
+#stats p {
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+#stats button {
+    display: block;
+    margin: 10px auto;
+}
