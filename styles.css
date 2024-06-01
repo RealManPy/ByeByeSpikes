@@ -4,95 +4,128 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     color: white;
     font-family: 'Arial', sans-serif;
+    overflow: hidden;
 }
 
 #game-container {
     text-align: center;
-    max-width: 400px;
-    padding: 20px;
-    border: 2px solid #555;
-    border-radius: 15px;
-    background: #3c3c3c;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    width: 80%;
+    max-width: 800px;
+    padding: 40px;
+    border: 3px solid #FF9800;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #4e4376, #2b5876);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
     animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
     0% {
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
     }
     50% {
-        box-shadow: 0 0 25px rgba(0, 0, 0, 1);
+        box-shadow: 0 0 35px rgba(0, 0, 0, 1);
     }
     100% {
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
     }
 }
 
 #logo {
-    width: 120px;
-    margin-bottom: 20px;
+    width: 200px;
+    margin-bottom: 30px;
+    border-radius: 50%;
+    border: 4px solid #FF9800;
+    box-shadow: 0 0 20px rgba(255, 152, 0, 0.8);
 }
 
 #robot-container {
     position: relative;
-    width: 300px;
-    height: 300px;
-    margin: 0 auto 20px auto;
+    width: 90%;
+    height: auto;
+    margin: 0 auto 30px auto;
+    border: 3px solid #FF9800;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 152, 0, 0.6);
 }
 
 #robot {
     width: 100%;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
 }
 
 #drill {
     position: absolute;
     width: 70px;
-    top: -70px; /* Adjust this value based on your drill image */
+    top: 20px; /* Adjust this value based on your drill image */
     left: 50%;
     transform: translateX(-50%);
     transition: top 0.1s ease-in-out;
 }
 
 #drill-button, #upgrade-button, #upgrade-perSec {
-    padding: 15px 25px;
-    font-size: 18px;
+    padding: 20px 40px;
+    font-size: 22px;
     border: none;
-    border-radius: 10px;
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ff512f, #dd2476);
     color: white;
     cursor: pointer;
     transition: background 0.3s, transform 0.1s;
-    margin: 10px 0;
-    width: 45%; /* Adjusted for inline display */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    display: inline-block; /* For inline display */
+    margin: 15px 0;
+    width: 45%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    display: inline-block;
     margin-left: 2.5%;
     margin-right: 2.5%;
 }
 
 #drill-button:hover, #upgrade-button:hover, #upgrade-perSec:hover {
-    background: linear-gradient(135deg, #ff4b2b, #ff416c);
-    transform: scale(1.05);
+    background: linear-gradient(135deg, #dd2476, #ff512f);
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(221, 36, 118, 0.6);
 }
 
 #stats {
-    margin-top: 20px;
+    margin-top: 30px;
+    font-size: 26px;
 }
 
 #stats p {
-    font-size: 22px;
-    margin: 10px 0;
+    font-size: 30px;
+    margin: 15px 0;
 }
 
 .upgrade-buttons {
     display: flex;
     justify-content: space-around;
-    margin-top: 10px;
+    margin-top: 20px;
+}
+
+/* Alert styles */
+#alert-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#alert-container.visible {
+    opacity: 1;
+}
+
+#alert-container.hidden {
+    opacity: 0;
 }
