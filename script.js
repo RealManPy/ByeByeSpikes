@@ -74,8 +74,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const vampirizeButton = document.getElementById('vampirize-button');
 const robotImage = document.getElementById('robot');
+const logoImage = document.getElementById('logo');
 
 vampirizeButton.addEventListener('click', () => {
     robotImage.src = 'shay.png';
+    logoImage.src = 'primo.png';
     showAlert('Robot vampirized!');
 });
