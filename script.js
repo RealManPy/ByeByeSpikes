@@ -71,3 +71,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 2000);
     }
 });
+
+const vampirizeButton = document.getElementById('vampirize-button');
+const robotImage = document.getElementById('robot');
+
+vampirizeButton.addEventListener('click', () => {
+    robotImage.src = 'shay.png';
+    showAlert('Robot vampirized!');
+});
